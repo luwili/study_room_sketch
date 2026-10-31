@@ -1,0 +1,421 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Anthropic Serif Web - Core Typefaces */
+@font-face {
+  font-family: 'Anthropic Serif Web';
+  src: url('./assets/fonts/AnthropicSerif-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anthropic Serif Web';
+  src: url('./assets/fonts/AnthropicSerif-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anthropic Serif Web';
+  src: url('./assets/fonts/AnthropicSerif-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anthropic Serif Web';
+  src: url('./assets/fonts/AnthropicSerif-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Anthropic Serif Alias */
+@font-face {
+  font-family: 'Anthropic Serif';
+  src: url('./assets/fonts/AnthropicSerif-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anthropic Serif';
+  src: url('./assets/fonts/AnthropicSerif-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anthropic Serif';
+  src: url('./assets/fonts/AnthropicSerif-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  html, body, #root, button, input, select, textarea {
+    font-family: 'Anthropic Serif Web', 'Anthropic Serif', 'Source Serif 4', 'Newsreader', Georgia, 'Times New Roman', serif;
+  }
+
+  body {
+    @apply transition-colors duration-200;
+    overscroll-behavior-y: contain;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
+
+/* Card flip for exam cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Print stylesheet for clean notes printing */
+@media print {
+  nav, aside, header, footer, button, .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .print-readable {
+    font-family: 'Anthropic Serif Web', 'Anthropic Serif', Georgia, serif !important;
+    max-width: 100% !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: black !important;
+  }
+}
+
+/* Styled Markdown Content for Topics and Conspects */
+.study-markdown {
+  @apply text-slate-800 dark:text-slate-100 font-serif leading-relaxed;
+}
+
+.study-markdown h1 {
+  @apply text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white pt-4 pb-3 mb-6 border-b border-slate-200 dark:border-slate-800 tracking-tight;
+}
+
+.study-markdown h2 {
+  @apply text-xl sm:text-2xl font-bold text-slate-900 dark:text-white pt-6 pb-2.5 mb-4 border-b border-slate-200/80 dark:border-slate-800/80 scroll-mt-24 tracking-tight;
+}
+
+.study-markdown h3 {
+  @apply text-lg sm:text-xl font-bold text-slate-850 dark:text-slate-100 pt-5 pb-2 mb-3 scroll-mt-24 tracking-tight;
+}
+
+.study-markdown h4 {
+  @apply text-base font-bold text-slate-700 dark:text-slate-300 pt-3 pb-1 mb-2 scroll-mt-24;
+}
+
+.study-markdown p {
+  @apply mb-4 leading-relaxed text-justify;
+}
+
+.study-markdown blockquote {
+  @apply my-5 p-4 sm:p-5 rounded-2xl bg-amber-50/70 dark:bg-amber-950/25 border-l-4 border-amber-500 text-slate-800 dark:text-amber-100/90 text-sm sm:text-base leading-relaxed italic shadow-sm;
+}
+
+.study-markdown blockquote p:last-child {
+  @apply mb-0;
+}
+
+.study-markdown ul {
+  @apply list-disc pl-6 mb-4 space-y-1.5 marker:text-brand-600 dark:marker:text-brand-400;
+}
+
+.study-markdown ol {
+  @apply list-decimal pl-6 mb-4 space-y-1.5 marker:font-semibold marker:text-slate-700 dark:marker:text-slate-300;
+}
+
+.study-markdown li {
+  @apply leading-relaxed pl-1;
+}
+
+.study-markdown strong {
+  @apply font-bold text-slate-900 dark:text-white;
+}
+
+.study-markdown em {
+  @apply italic text-slate-800 dark:text-slate-200;
+}
+
+.study-markdown table {
+  @apply w-full text-left border-collapse text-xs sm:text-sm my-6 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800;
+}
+
+.study-markdown thead {
+  @apply bg-slate-100 dark:bg-slate-800/80 text-slate-900 dark:text-white font-bold border-b border-slate-200 dark:border-slate-700;
+}
+
+.study-markdown th {
+  @apply px-4 py-2.5 font-bold;
+}
+
+.study-markdown td {
+  @apply px-4 py-2.5 border-t border-slate-100 dark:border-slate-800;
+}
+
+.study-markdown code {
+  @apply px-1.5 py-0.5 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-brand-800 dark:text-brand-300 border border-slate-200 dark:border-slate-700;
+}
+
+.study-markdown pre {
+  @apply p-4 my-4 rounded-xl bg-slate-900 text-slate-100 text-xs overflow-x-auto;
+}
+
+.study-markdown pre code {
+  @apply bg-transparent text-slate-100 p-0 border-0;
+}
+
+.study-markdown hr {
+  @apply my-8 border-0 border-t border-slate-200 dark:border-slate-800;
+}
+
+.study-markdown a {
+  @apply text-brand-600 dark:text-brand-400 underline underline-offset-2 hover:text-brand-700 dark:hover:text-brand-300;
+}
+
+/* ==========================================================================
+   Futuristic Sketchbook Design System Styles
+   ========================================================================== */
+
+/* Technical Blueprint / Sketchbook Grids */
+.bg-sketch-grid {
+  background-image: 
+    linear-gradient(to right, rgba(37, 99, 235, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .bg-sketch-grid {
+  background-image: 
+    linear-gradient(to right, rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-sketch-grid-dense {
+  background-image: 
+    linear-gradient(to right, rgba(37, 99, 235, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.09) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.dark .bg-sketch-grid-dense {
+  background-image: 
+    linear-gradient(to right, rgba(96, 165, 250, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96, 165, 250, 0.07) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+/* Organic Hand-Drawn Borders */
+.border-sketch {
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: #12161A;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.dark .border-sketch {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.border-sketch-thick {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #12161A;
+  border-radius: 255px 18px 225px 18px/18px 225px 18px 255px;
+}
+
+.dark .border-sketch-thick {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.border-sketch-sm {
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: #12161A;
+  border-radius: 140px 8px 130px 8px/8px 130px 8px 140px;
+}
+
+.dark .border-sketch-sm {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Offset Hand-drawn Drop Shadows */
+.shadow-sketch {
+  box-shadow: 3px 3px 0px 0px #12161A;
+}
+
+.dark .shadow-sketch {
+  box-shadow: 3px 3px 0px 0px rgba(255, 255, 255, 0.22);
+}
+
+.shadow-sketch-sm {
+  box-shadow: 2px 2px 0px 0px #12161A;
+}
+
+.dark .shadow-sketch-sm {
+  box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.2);
+}
+
+.shadow-sketch-lg {
+  box-shadow: 5px 5px 0px 0px #12161A;
+}
+
+.dark .shadow-sketch-lg {
+  box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.25);
+}
+
+.shadow-sketch-lime {
+  box-shadow: 3px 3px 0px 0px #84CC16;
+}
+
+.shadow-sketch-indigo {
+  box-shadow: 3px 3px 0px 0px #2563EB;
+}
+
+.shadow-sketch-hover {
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.15s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.shadow-sketch-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px #12161A;
+}
+
+.dark .shadow-sketch-hover:hover {
+  box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.35);
+}
+
+.shadow-sketch-hover:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px #12161A;
+}
+
+.dark .shadow-sketch-hover:active {
+  box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, 0.15);
+}
+
+/* Marker Highlights */
+.marker-lime {
+  background: linear-gradient(104deg, rgba(163, 230, 53, 0) 0.9%, rgba(163, 230, 53, 0.3) 2.4%, rgba(190, 242, 100, 0.45) 96.6%, rgba(163, 230, 53, 0) 98.3%);
+  border-radius: 4px;
+}
+
+.marker-indigo {
+  background: linear-gradient(104deg, rgba(37, 99, 235, 0) 0.9%, rgba(37, 99, 235, 0.15) 2.4%, rgba(59, 130, 246, 0.22) 96.6%, rgba(37, 99, 235, 0) 98.3%);
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0.6deg);
+  }
+}
+
+@keyframes orbitSpinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-orbit-spin {
+  animation: orbitSpinSlow 26s linear infinite;
+}
+
+/* Card staggered entry */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-appear {
+  animation: cardAppear 0.28s ease-out forwards;
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+

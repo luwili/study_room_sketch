@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_school" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/group_name"
+            android:textColor="@color/text_white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/institute_name"
+            android:textColor="@color/amber_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_badge_pill"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="Версия 1.1.0 · ПОНБ-УП-304С"
+            android:textColor="@color/amber_primary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_pair_item"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Виджет расписания"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Чтобы добавить виджет на рабочий стол:\n1. Зажмите пальцем свободное место на домашнем экране телефона.\n2. Выберите пункт «Виджеты».\n3. Найдите в списке «ПОНБ-УП-304С» и перетащите виджет на экран."
+                android:textColor="@color/text_subtle"
+                android:textSize="13sp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:id="@+id/tv_cache_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Статус: данные загружаются..."
+                android:textColor="@color/text_muted"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Samsung & Xiaomi Background Stability Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_pair_item"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ Стабильность на Samsung и Xiaomi"
+                android:textColor="@color/amber_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Если виджет перестал обновляться, система перевела приложение в режим сна (Sleeping apps):\n• Нажмите кнопку ниже и выберите режим «Без ограничений» (Не ограничено).\n• На Samsung: проверьте, что приложение не в «Глубоком сне».\n• На Xiaomi: включите «Автозапуск»."
+                android:textColor="@color/text_subtle"
+                android:textSize="12sp"
+                android:lineSpacingExtra="3dp" />
+
+            <Button
+                android:id="@+id/btn_battery_settings"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/card_surface"
+                android:text="Настроить батарею (Без ограничений)"
+                android:textColor="@color/text_white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- VPN & Whitelist Connectivity Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_pair_item"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌐 Режим белых списков и VPN"
+                android:textColor="@color/amber_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Если интернет ограничен и работает только через VPN:\n• В настройках вашего VPN (V2Ray, Outline, Hiddify) добавьте «ПОНБ-УП-304С» в список туннеля (или выберите «Все приложения»).\n• Встроено 6 независимых CDN-зеркал (jsDelivr Anycast, GitHub Pages, Fastly, GCore).\n• Откройте веб-кабинет кнопкой ниже — виджет автоматически получит расписание через браузер даже при блокировках!"
+                android:textColor="@color/text_subtle"
+                android:textSize="12sp"
+                android:lineSpacingExtra="3dp" />
+        </LinearLayout>
+
+        <!-- Actions -->
+        <Button
+            android:id="@+id/btn_update_now"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/amber_primary"
+            android:text="Обновить расписание сейчас"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_open_embedded_web"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/card_surface"
+            android:text="Открыть веб-кабинет (автосинхронизация)"
+            android:textColor="@color/text_white" />
+
+        <Button
+            android:id="@+id/btn_download_update"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/card_surface"
+            android:text="Скачать свежий APK (v1.2.0)"
+            android:textColor="@color/text_white" />
+
+        <Button
+            android:id="@+id/btn_open_website"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/card_surface"
+            android:text="Открыть во внешнем браузере"
+            android:textColor="@color/text_muted" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+dist-ssr/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Private student data (STRICT REQUIREMENT)
+private-data/
+Список группы.md
+*.roster.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# System / Editor
+.DS_Store
+*.log
+.vscode/
+.idea/

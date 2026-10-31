@@ -1,0 +1,27 @@
+{
+  "fullName": "Институт права Федерального государственного бюджетного образовательного учреждения высшего образования «Уфимский университет науки и технологий»",
+  "shortName": "Институт права УУНиТ",
+  "city": "Уфа",
+  "region": "Республика Башкортостан",
+  "timezone": "Asia/Yekaterinburg",
+  "website": "https://law-bsu.ru/",
+  "address": "450005, Республика Башкортостан, г. Уфа, ул. Достоевского, д. 131",
+  "secondCampus": "450076, г. Уфа, ул. Заки Валиди, д. 32 (Главный корпус УУНиТ)",
+  "phone": "8-987-103-80-00",
+  "email": "institutprava@uust.ru",
+  "officialSchedules": "https://law-bsu.ru/schedules",
+  "officialDepartments": "https://law-bsu.ru/kafedry",
+  "officialContacts": "https://law-bsu.ru/contacts",
+  "officialCertificates": "https://law-bsu.ru/spravki",
+  "officialPractice": "https://law-bsu.ru/practice",
+  "officialClubs": "https://law-bsu.ru/clubs",
+  "group": {
+    "code": "ПОНБ-УП-304С",
+    "specialty": "40.05.01 Правовое обеспечение национальной безопасности",
+    "specialization": "Уголовно-правовая (УП)",
+    "curator": "Нурмухаметов Руслан Наилевич",
+    "semester": "5 семестр (3 курс)",
+    "studyForm": "Очная"
+  },
+  "updatedAt": "2026-10-24"
+}

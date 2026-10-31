@@ -1,0 +1,43 @@
+{
+  "name": "study_room",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node -e \"const fs=require('fs'); fs.mkdirSync('public/data',{recursive:true}); fs.copyFileSync('src/data/schedule.json','public/data/schedule.json'); fs.copyFileSync('src/data/announcements.json','public/data/announcements.json');\" && tsc && vite build",
+    "check": "tsc --noEmit",
+    "test": "npm run check",
+    "preview": "vite preview",
+    "content:prepare": "python3 scripts/import_content.py",
+    "content:import": "python3 scripts/import_content.py",
+    "schedule:sync": "python3 scripts/sync_uust_schedule.py",
+    "institute:sync": "python3 scripts/sync_institute.py"
+  },
+  "dependencies": {
+    "@types/dompurify": "^3.0.5",
+    "@types/marked": "^5.0.2",
+    "clsx": "^2.1.1",
+    "dompurify": "^3.4.17",
+    "lucide-react": "^1.16.0",
+    "marked": "^18.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^22.8.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "libsodium-wrappers": "^0.8.4",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tweetnacl": "^1.0.3",
+    "tweetnacl-util": "^0.15.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}
